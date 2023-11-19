@@ -11,7 +11,7 @@ import (
 )
 
 func GetStructure(c echo.Context) error {
-	repo := new(model.Repo)
+	repo := new(model.Repository)
 
 	if err := c.Bind(repo); err != nil {
 		return err
@@ -28,6 +28,19 @@ func GetStructure(c echo.Context) error {
 	}
 
 	return c.JSON(http.StatusOK, response.Tree)
+}
+
+func GetFile(c echo.Context) error {
+	file := new(model.File)
+
+	if err := c.Bind(file); err != nil {
+		return err
+	}
+
+	githubUrl := "https://raw.githubusercontent.com/" + file.Owner + "/" + file.Repo + "/" + file.Branch + "/" + file.Path
+	body := getRequest(githubUrl)
+
+	return c.String(http.StatusOK, string(body))
 }
 
 func getRequest(url string) []byte {
