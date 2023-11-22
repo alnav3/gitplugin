@@ -1,4 +1,4 @@
-# gitplugin
+# GitPlugin
 
 `gitplugin` is a ChatGPT plugin written in Go, providing a simple yet effective way to interact with GitHub repositories. This plugin is designed to be integrated into ChatGPT applications to enhance their capabilities in fetching and displaying content from GitHub repositories.
 
