@@ -1,0 +1,13 @@
+{
+    "version": 2,
+    "routes": [
+        {
+            "src": "/repo",
+            "dest": "/api/repo.go"
+        }
+        {
+            "src": "/file",
+            "dest": "/api/file.go"
+        }
+    ]
+}
